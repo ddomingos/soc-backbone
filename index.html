@@ -10,35 +10,57 @@
         <link rel="stylesheet" href="css-libraries/bootstrap.min.css" />
         <link rel="stylesheet" href="css-libraries/bootstrap-theme.min.css" />
 
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet/less" type="text/css" href="css/main.less" />
+
+        <script src="javascript-libraries/less-1.7.0.min.js"></script>
     </head>
     <body>
         <!-- Add your site or application content here -->
         <div id="app" class="container-fluid">
             <div class="row">
-                <div id="all-movies" class="col-xs-1 col-xs-offset-1">
-                    Unrated Videos
+                <div id="all-movies" class="movie-column col-xs-1">
                 </div>
-                <div class="col-xs-1 col-xs-offset-1">
-                    Epic
+                <div id="epic" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/epic.jpg" width="100%" />
+                        <h3>Epic</h3>
+                    </div>
                 </div>
-                <div class="col-xs-1">
-                    Awesome
+                <div id="awesome" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/awesome.jpg" width="100%" />
+                        <h3>Awesome</h3>
+                    </div>
                 </div>
-                <div class="col-xs-1">
-                    Good
+                <div id="good" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/good.jpg" width="100%" />
+                        <h3>Good</h3>
+                    </div>
                 </div>
-                <div class="col-xs-1">
-                    Watchable
+                <div id="watchable" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/watchable.jpg" width="100%" />
+                        <h3>Watchable</h3>
+                    </div>
                 </div>
-                <div class="col-xs-1">
-                    Bad
+                <div id="bad" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/bad.jpg" width="100%" />
+                        <h3>Bad</h3>
+                    </div>
                 </div>
-                <div class="col-xs-1">
-                    Barely Watchable
+                <div id="barely-watchable" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/barelywatchable.jpg" width="100%" />
+                        <h3>Barely Watchable</h3>
+                    </div>
                 </div>
-                <div class="col-xs-1">
-                    Ugly
+                <div id="ugly" class="movie-column col-xs-1">
+                    <div class="cage-rating">
+                        <img src="images/ugly.jpg" width="100%" />
+                        <h3>Ugly</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,7 +69,7 @@
         <script src="javascript-libraries/jquery-ui-1.10.4.custom.min.js"></script>
         <script src="javascript-libraries/underscore-min.js"></script>
         <script src="javascript-libraries/backbone-min.js"></script>
-        
+
         <script src="js/application.js"></script>
         <script src="js/modules/movies.js"></script>
     </body>

@@ -47,15 +47,12 @@ var MovieListView = Backbone.View.extend({
 
     addOne: function(movieItem) {
         var movieView = new MovieView({ model: movieItem });
-        console.log(movieView.render().el);
         this.$el.append(movieView.render().el);
     },
 
     addAll: function() {
-        this.collection.forEach(this.addOne, this);  
+        this.collection.forEach(this.addOne, this);
     },
 });
 
 var movieListView = new MovieListView({ collection: movieList });
-
-$('#all-movies').append(movieListView.el);
