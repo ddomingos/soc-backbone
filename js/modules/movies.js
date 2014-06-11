@@ -29,10 +29,9 @@ var MovieView = Backbone.View.extend({
 
 var MovieList = Backbone.Collection.extend({
     url: 'http://localhost:3000/movies',
-    model: MovieModel,
+    model: MovieModel,  
 });
 
-var movieList = new MovieList();
 
 var MovieListView = Backbone.View.extend({
     tagName: 'ul',
@@ -44,15 +43,11 @@ var MovieListView = Backbone.View.extend({
     render: function() {
         this.addAll();
     },
-
     addOne: function(movieItem) {
         var movieView = new MovieView({ model: movieItem });
         this.$el.append(movieView.render().el);
     },
-
     addAll: function() {
         this.collection.forEach(this.addOne, this);
     },
 });
-
-var movieListView = new MovieListView({ collection: movieList });
