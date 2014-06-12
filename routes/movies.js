@@ -25,7 +25,6 @@ exports.findAll = function(request, response) {
             query = {'title': {$regex: request.query.q, $options: 'i' }};
         }
         if (typeof(request.query.rating) != 'undefined') {
-            console.log(request.query.rating == 0);
             if (request.query.rating == 0) {
                 query = { $or: [{'rating': {$exists: false}}, {'rating': Number(request.query.rating)}]};
             } else {
@@ -33,9 +32,7 @@ exports.findAll = function(request, response) {
             }
         }
         collection.find(query).toArray(function(error, movies) {
-            console.log(error);
-            console.log(movies);
-            response.json(movies);
+             response.json(movies);
         });
     });
 };

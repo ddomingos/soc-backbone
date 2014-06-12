@@ -1,9 +1,14 @@
 var MovieModel = Backbone.Model.extend({
     urlRoot: '/movies',
     parse: function(response) {
-        if (response.length) response = response[0];
-        response.id = response._id;
-        delete response._id;
+        if (response.length) {
+            response = response[0];
+            console.log(response);
+        }
+        if (typeof(response._id)  != 'undefined' && response._id != null) {
+            response.id = String(response._id);
+            delete response._id;
+        }
         return response;
     },
     toJSON: function() {
@@ -16,6 +21,9 @@ var MovieModel = Backbone.Model.extend({
 var MovieView = Backbone.View.extend({
     tagName: 'li',
     className: 'movie',
+    attributes: function() {
+        return { 'data-id': this.model.get('id') };
+    },
     template: _.template('<p><strong><%= title %></strong> (<%= year %>)</span></p><p><%= role %></p>'),
     initialize: function() {
         this.model.on('change', this.render, this);
@@ -24,6 +32,9 @@ var MovieView = Backbone.View.extend({
         var attributes = this.model.attributes;
         this.$el.html(this.template(attributes));
         return this;
+    },
+    getID: function() {
+        return this.model.get('id');
     }
 });
 
